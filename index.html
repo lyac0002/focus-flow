@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Flow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>Focus Flow</h1>
+      <p>Plan. Focus. Finish.</p>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="summary">
+      <div class="summary-card">
+        <h2 id="active-count">0</h2>
+        <p>Active Tasks</p>
+      </div>
+
+      <div class="summary-card">
+        <h2 id="completed-count">0</h2>
+        <p>Completed Tasks</p>
+      </div>
+    </section>
+
+    <div class="dashboard">
+
+      <div class="left-side">
+
+        <section class="card">
+          <h2>Add Task</h2>
+
+          <form id="task-form">
+
+            <label for="task-name">Task Name</label>
+            <input
+              type="text"
+              id="task-name"
+              placeholder="Enter your task"
+            >
+
+            <p id="task-error"></p>
+
+            <div class="form-row">
+
+              <div>
+                <label for="due-date">Due Date</label>
+                <input type="date" id="due-date">
+              </div>
+
+              <div>
+                <label for="priority">Priority</label>
+
+                <select id="priority">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+
+            </div>
+
+            <button type="submit" class="main-btn">
+              Add Task
+            </button>
+
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Your Tasks</h2>
+
+          <div class="task-tools">
+
+            <div class="filters">
+              <button class="filter-btn active" data-filter="all">
+                All
+              </button>
+
+              <button class="filter-btn" data-filter="active">
+                Active
+              </button>
+
+              <button class="filter-btn" data-filter="completed">
+                Completed
+              </button>
+            </div>
+
+            <div class="sort">
+              <label for="sort-tasks">Sort:</label>
+
+              <select id="sort-tasks">
+                <option value="date">Due Date</option>
+                <option value="priority">Priority</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div id="task-list"></div>
+
+          <p id="empty-message">
+            No tasks yet. Add your first task!
+          </p>
+
+        </section>
+
+      </div>
+
+      <section class="card timer-card">
+
+        <h2>Focus Timer</h2>
+
+        <div class="timer-modes">
+          <button id="focus-mode" class="active-mode">
+            Focus
+          </button>
+
+          <button id="break-mode">
+            Break
+          </button>
+        </div>
+
+        <div id="timer-display">25:00</div>
+
+        <p id="timer-text">Focus Session</p>
+
+        <p class="timer-message">
+          Stay focused and get things done.
+        </p>
+
+        <div class="timer-buttons">
+          <button id="start-timer">Start</button>
+          <button id="pause-timer">Pause</button>
+          <button id="reset-timer">Reset</button>
+        </div>
+
+        <small>25 min work / 5 min break</small>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Focus Flow © 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
